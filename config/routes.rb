@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  resources :songs
+
+  resources :topics
+
   resources :drinks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'drinks#index'
+  root 'songs#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
