@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :songs
+  resources :songs do
+      member do
+          post 'upvote'
+      end
+  end
 
   resources :topics
 

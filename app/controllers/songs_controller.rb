@@ -60,6 +60,12 @@ class SongsController < ApplicationController
       format.json { head :no_content }
     end
   end
+    
+  def upvote
+      @song = Song.find(params[:id])
+      @song.votes.create
+      redirect_to(songs_path)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
