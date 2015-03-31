@@ -66,6 +66,12 @@ class SongsController < ApplicationController
       @song.votes.create
       redirect_to(songs_path)
   end
+    
+  def downvote
+      @song = Song.find(params[:id])
+      @song.votes.first.destroy
+      redirect_to(songs_path)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
